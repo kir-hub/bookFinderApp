@@ -1,5 +1,12 @@
 import axios from 'axios'
+import apiKey from '../../../key'
 
-console.log(1);
-const res = axios.get('https://www.googleapis.com/books/v1/volumes/zyTCAlFPjgYC?projection=lite&key=AIzaSyDQR90V3fE8VfBnUYlH6T8UCkBWcRcgNaM')
-console.log(res);
+const BASE_URL = 'https://www.googleapis.com/books/v1/volumes?q='
+const BOOK_TITLE = 'string'
+const AUTHOR = '+inauthor:name'//добавить проверку на наличие нескольких условий
+const KEY = `&key=${apiKey}`
+
+// const getBooks = (book_title, author) => axios.get(`https://www.googleapis.com/books/v1/volumes/zyTCAlFPjgYC?projection=lite&key=${KEY}`)
+const getBooks = (book_title, author) => axios.get(`${BASE_URL}${book_title}${author}${KEY}`)
+
+export default getBooks;
