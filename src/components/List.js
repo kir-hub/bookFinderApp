@@ -54,10 +54,10 @@ export default function List() {
                     <img src={item.img} alt={item.title}/>
                     <h1>{item.title}</h1>
                     <h3>{item.author}</h3>
-                    <p>publisher {item.publisher ? item.publisher : 'none'}</p>
+                    <p>publisher {item.publisher || 'none'}</p>
                     <p>{item.dateOfPublish}</p>
                     <p>{item.description}</p>
-                    <a>{item.link}</a>
+                    <a href={item.link}>{item.link}</a>
                 </div>
             </li> ))} </ul>
         </div>
